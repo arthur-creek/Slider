@@ -23,12 +23,21 @@ body {
   font-size: 0px;
   z-index: 10;
 }
-
-.carousel img{
+.carousel .container-li {
+  position: relative;
+}
+.carousel .container-image {
   width: 750px;
   height: 468px;
   display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  /*
   border-radius: 55px;
+  background-color: #f1f1f1;
+  background-size: cover;
+  */
 }
 
 .gallery {
