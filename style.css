@@ -1,0 +1,85 @@
+body {
+  background: black;
+  padding: 10px;
+  background-image: url(f28.jpg);
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7;
+  z-index: 9;
+}
+
+.carousel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0px;
+  z-index: 10;
+}
+
+.carousel img{
+  width: 750px;
+  height: 468px;
+  display: block;
+  border-radius: 55px;
+}
+
+.gallery {
+  width: 750px;
+  height: 468px;
+  overflow: hidden;
+}
+
+.gallery ul {
+  height: 130px;
+  width: 9999px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: margin-left 500ms;
+}
+
+.gallery li {
+  display: inline-block;
+}
+
+.prev {
+  left: -70px;
+  position: absolute;
+  top: 50%;
+  font-size: 60px;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  transition: transform 0.5s color 0.2s;
+  cursor: pointer;
+}
+
+.prev:active {
+  color:aqua;
+}
+
+.next:active {
+  color:aqua;
+}
+
+.next {
+  right: -70px;
+  position: absolute;
+  top: 50%;
+  font-size: 60px;
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  transition: transform 0.5s color 0.2s;
+  cursor: pointer;
+}
