@@ -19,15 +19,40 @@ var listElements = images.map(function (image) {
 });
 
 carousel.querySelector('.prev').onclick = function() {
-  console.log('before', position, width);
   position = Math.min(position + width, 0);
   listImages.style.marginLeft = position + 'px';
-  console.log('after', position);
 };
 
 carousel.querySelector('.next').onclick = function() {
-  console.log('before', position, width);
   position = Math.max(position - width, -width * (listElements.length - 1));
   listImages.style.marginLeft = position + 'px';
-  console.log('after', position);
 };
+
+// var images = [
+//   {
+//     id: 12568,
+//     src: 'http://morra.space/images/T6xshjKAsuwuisd.jpg',
+//     name: '',
+//     deacription: 'СТАя'
+//   },
+//   {
+//     id: 12567,
+//     src: 'http://morra.space/images/T6xshjKAsuwuisd.jpg',
+//     name: '',
+//     deacription: 'СВИНЬЯ'
+//   },
+//   {
+//     id: 12566,
+//     src: 'http://morra.space/images/T6xshjKAsuwuisd.jpg',
+//     name: '',
+//     deacription: 'ОГОНЬ'
+//   }
+// ]
+//
+// function getPage(id) {
+//   fetch('https://morra.space/v1/api/images?id=' + id + '&pageSize=20').then(function (items) {
+//     images.push(items);
+//   });
+// }
+//
+// getPage(images[images.length-1].id) // id = 12566
