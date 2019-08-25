@@ -2,31 +2,26 @@ var images = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'];
 var width = 750;
 var position = 0;
 
-var carousel = document.getElementById('carousel');
-var listImages = carousel.querySelector('ul.images');
+var carousel = $('#carousel');
+var listImages = $('ul.images');
 
 var listElements = images.map(function (image) {
-  var li = document.createElement('li');
-  li.classList.add('container-li');
-  listImages.appendChild(li);
+  var li = $('<li>').addClass('container-li').appendTo(listImages);
 
-  var containerImage = document.createElement('div');
-  containerImage.classList.add('container-image');
-  containerImage.style.backgroundImage = 'url(' + image + ')';
-  li.appendChild(containerImage);
+  $('<div>').addClass('container-image').css({ backgroundImage: 'url(' + image + ')' }).appendTo(li);
 
   return li;
 });
 
-carousel.querySelector('.prev').onclick = function() {
+$('.prev', carousel).on('click', function() {
   position = Math.min(position + width, 0);
-  listImages.style.marginLeft = position + 'px';
-};
+  listImages.css({ marginLeft: position });
+});
 
-carousel.querySelector('.next').onclick = function() {
+$('.next', carousel).on('click', function() {
   position = Math.max(position - width, -width * (listElements.length - 1));
-  listImages.style.marginLeft = position + 'px';
-};
+  listImages.css({ marginLeft: position });
+});
 
 // var images = [
 //   {
